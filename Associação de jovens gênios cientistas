@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACJG - Associação Científica de Jovens Gênios</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #00b4d8, #90be6d);
+      color: white;
+    }
+    header {
+      background-color: rgba(0,0,0,0.6);
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 50px;
+      margin: 0;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 0;
+      opacity: 0.8;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background-color: rgba(0,0,0,0.4);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffdd00;
+    }
+    .content {
+      padding: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ACJG</h1>
+    <h2>Associação Científica de Jovens Gênios</h2>
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Sobre</a>
+    <a href="#">Notícias</a>
+    <a href="#">Eventos</a>
+    <a href="#">Participantes</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <div class="content">
+    <h2>Bem-vindo à ACJG!</h2>
+    <p>Unindo jovens gênios para criar, debater e transformar o mundo com ciência!</p>
+    <p>Junte-se ao nosso grupo no <a href="https://discord.com/" target="_blank" style="color: #ffdd00; font-weight: bold;">Discord</a> e comece agora mesmo!</p>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notícias - ACJG</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #00b4d8, #90be6d);
+      color: white;
+      margin: 0;
+      padding: 0 20px;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 40px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 15px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffdd00;
+    }
+    .news-list {
+      margin-top: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .news-item {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .news-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .news-content {
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
+    #login-section, #add-news-section {
+      max-width: 700px;
+      margin: 20px auto;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input[type="text"], input[type="password"], textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #ffdd00;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ACJG</h1>
+    <h2>Associação Científica de Jovens Gênios</h2>
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Sobre</a>
+    <a href="#">Notícias</a>
+    <a href="#">Eventos</a>
+    <a href="#">Participantes</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <div class="news-list" id="news-list">
+    <h2>Notícias</h2>
+    <p>Nenhuma notícia publicada ainda.</p>
+  </div>
+
+  <div id="login-section">
+    <h3>Área do Administrador - Faça login para adicionar notícias</h3>
+    <label for="admin-password">Senha:</label>
+    <input type="password" id="admin-password" placeholder="Digite a senha" />
+    <button onclick="checkPassword()">Entrar</button>
+    <p id="login-message" style="color: #ffdd00;"></p>
+  </div>
+
+  <div id="add-news-section" style="display:none;">
+    <h3>Adicionar Nova Notícia</h3>
+    <label for="news-title">Título:</label>
+    <input type="text" id="news-title" placeholder="Título da notícia" />
+    <label for="news-content">Conteúdo:</label>
+    <textarea id="news-content" rows="5" placeholder="Conteúdo da notícia"></textarea>
+    <button onclick="addNews()">Publicar</button>
+  </div>
+
+  <script>
+    const correctPassword = "1219GRIMALDO";
+    const newsList = document.getElementById("news-list");
+    const loginSection = document.getElementById("login-section");
+    const addNewsSection = document.getElementById("add-news-section");
+    const loginMessage = document.getElementById("login-message");
+
+    let newsArray = [];
+
+    function checkPassword() {
+      const entered = document.getElementById("admin-password").value;
+      if (entered === correctPassword) {
+        loginMessage.textContent = "Login realizado com sucesso!";
+        loginSection.style.display = "none";
+        addNewsSection.style.display = "block";
+        renderNews();
+      } else {
+        loginMessage.textContent = "Senha incorreta. Tente novamente.";
+      }
+      document.getElementById("admin-password").value = "";
+    }
+
+    function addNews() {
+      const title = document.getElementById("news-title").value.trim();
+      const content = document.getElementById("news-content").value.trim();
+      if (!title || !content) {
+        alert("Por favor, preencha título e conteúdo.");
+        return;
+      }
+      newsArray.unshift({ title, content });
+      renderNews();
+      document.getElementById("news-title").value = "";
+      document.getElementById("news-content").value = "";
+      alert("Notícia publicada com sucesso!");
+    }
+
+    function renderNews() {
+      if (newsArray.length === 0) {
+        newsList.innerHTML = "<h2>Notícias</h2><p>Nenhuma notícia publicada ainda.</p>";
+        return;
+      }
+      let html = "<h2>Notícias</h2>";
+      newsArray.forEach((news) => {
+        html += `
+          <div class="news-item">
+            <div class="news-title">${news.title}</div>
+            <div class="news-content">${news.content}</div>
+          </div>
+        `;
+      });
+      newsList.innerHTML = html;
+    }
+
+    // Inicializa as notícias (se quiser, pode pré-carregar aqui)
+    renderNews();
+  </script>
+</body>
+</html>
